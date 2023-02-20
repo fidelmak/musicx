@@ -82,27 +82,30 @@ class _MusicXState extends State<MusicX> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   SizedBox(height: 10),
-                  Container(
-                    height: 200,
-                    width: 300,
+                  Padding(
+                    padding: const EdgeInsets.all(20.0),
                     child: Card(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: <Widget>[
-                          ListTile(
-                            leading: Image.asset(
+                      child: Container(
+                        padding: EdgeInsets.all(15.0),
+                        height: 200,
+                        child: Row(
+                          children: [
+                            Image.asset(
                               'img/ayra.png',
                               fit: BoxFit.cover,
-                              height: 200.0,
-                              width: 200.0,
+                              height: 400,
                             ),
-                            title: const Text('Sound Mojo'),
-                            subtitle: const Text('play the boost out loud.'),
-                          ),
-                        ],
+                            Flexible(
+                              child: ListTile(
+                                leading: Icon(Icons.person),
+                                title: Text('Jane Doe'),
+                                subtitle: Text('jane.doe@example.com'),
+                                trailing: Icon(Icons.arrow_forward),
+                              ),
+                            )
+                          ],
+                        ),
                       ),
-                      elevation: 5,
-                      margin: const EdgeInsets.all(10),
                     ),
                   ),
                   buildKey(
