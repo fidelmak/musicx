@@ -91,16 +91,14 @@ class _MusicXState extends State<MusicX> {
                         child: Row(
                           children: [
                             Image.asset(
-                              'img/ayra.png',
+                              'img/muxCard.jpg',
                               fit: BoxFit.cover,
                               height: 400,
                             ),
                             Flexible(
                               child: ListTile(
-                                leading: Icon(Icons.person),
                                 title: Text('Jane Doe'),
                                 subtitle: Text('jane.doe@example.com'),
-                                trailing: Icon(Icons.arrow_forward),
                               ),
                             )
                           ],
