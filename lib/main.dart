@@ -16,7 +16,7 @@ class MusicX extends StatefulWidget {
 class _MusicXState extends State<MusicX> {
   final player = AudioPlayer();
   void playSound(int soundNumber) {
-    player.play(AssetSource('/muz/mux$soundNumber.mp3'));
+    player.play(AssetSource('muz/mux$soundNumber.mp3'));
   }
 
   void pauseSound() {
@@ -44,41 +44,41 @@ class _MusicXState extends State<MusicX> {
             leading: image,
             title: Text(song, style: TextStyle(color: Colors.white)),
             subtitle: Text(artist, style: TextStyle(color: Colors.white)),
-            trailing: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                TextButton(
-                  onPressed: () {
-                    // Add your onPressed code here
-                    playSound(soundNumber);
-                  },
-                  child: Icon(
-                    Icons.play_circle_filled,
-                    color: Colors.white,
-                  ),
+          ),
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              TextButton(
+                onPressed: () {
+                  // Add your onPressed code here
+                  playSound(soundNumber);
+                },
+                child: Icon(
+                  Icons.play_circle_filled,
+                  color: Colors.white,
                 ),
-                TextButton(
-                  onPressed: () {
-                    // Add your onPressed code here
-                    pauseSound();
-                  },
-                  child: Icon(
-                    Icons.pause,
-                    color: Colors.white,
-                  ),
+              ),
+              TextButton(
+                onPressed: () {
+                  // Add your onPressed code here
+                  pauseSound();
+                },
+                child: Icon(
+                  Icons.pause,
+                  color: Colors.white,
                 ),
-                TextButton(
-                  onPressed: () {
-                    // Add your onPressed code here
-                    stopSound();
-                  },
-                  child: Icon(
-                    Icons.stop,
-                    color: Colors.white,
-                  ),
+              ),
+              TextButton(
+                onPressed: () {
+                  // Add your onPressed code here
+                  stopSound();
+                },
+                child: Icon(
+                  Icons.stop,
+                  color: Colors.white,
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ],
       ),
@@ -124,7 +124,7 @@ class _MusicXState extends State<MusicX> {
                         padding: EdgeInsets.all(15.0),
                         height: 200,
                         child: Image.asset(
-                          'img/muxCard.jpg',
+                          'assets/img/muxCard.jpg',
                           fit: BoxFit.cover,
                           width: 400,
                           height: 400,
@@ -139,38 +139,38 @@ class _MusicXState extends State<MusicX> {
                       soundNumber: 1,
                       song: "Song title: let th b light",
                       artist: "Artist name :seyi ft zlatan",
-                      image: Image.asset('img/zlatan.jpeg'),
+                      image: Image.asset('assets/img/zlatan.jpeg'),
                     ),
                     buildKey(
                         color: Colors.black,
                         soundNumber: 2,
                         song: "Song title:do you mind",
                         artist: " Artist name : Chris Brown",
-                        image: Image.asset('img/do-you-mind.webp')),
+                        image: Image.asset('assets/img/do-you-mind.webp')),
                     buildKey(
                         color: Colors.black,
                         soundNumber: 3,
                         song: "Song title: Ojemba",
                         artist: " Artist name : Phyno ft Olamide",
-                        image: Image.asset('img/ojemba-artwork.webp')),
+                        image: Image.asset('assets/img/ojemba-artwork.webp')),
                     buildKey(
                         color: Colors.black,
                         soundNumber: 4,
                         song: "Song title: yoga",
                         artist: " Artist name : Asake",
-                        image: Image.asset('img/yoga-artwork.webp')),
+                        image: Image.asset('assets/img/yoga-artwork.webp')),
                     buildKey(
                         color: Colors.black,
                         soundNumber: 5,
                         song: "Song title: kunfayakun",
                         artist: " Artist name : seyi-vibez",
-                        image: Image.asset('img/sey-vibez.jpg')),
+                        image: Image.asset('assets/img/sey-vibez.jpg')),
                     buildKey(
                         color: Colors.black,
                         soundNumber: 6,
                         song: "Song title: salibity",
                         artist: " Artist name : Ayra star",
-                        image: Image.asset('img/ayra.png')),
+                        image: Image.asset('assets/img/ayra.png')),
                   ])),
                 ],
               ),
