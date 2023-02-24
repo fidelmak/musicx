@@ -159,6 +159,18 @@ class _MusicXState extends State<MusicX> {
                         song: "Song title: yoga",
                         artist: " Artist name : Asake",
                         image: Image.asset('img/yoga-artwork.webp')),
+                    buildKey(
+                        color: Colors.black,
+                        soundNumber: 5,
+                        song: "Song title: kunfayakun",
+                        artist: " Artist name : seyi-vibez",
+                        image: Image.asset('img/sey-vibez.jpg')),
+                    buildKey(
+                        color: Colors.black,
+                        soundNumber: 6,
+                        song: "Song title: salibity",
+                        artist: " Artist name : Ayra star",
+                        image: Image.asset('img/ayra.png')),
                   ])),
                 ],
               ),
