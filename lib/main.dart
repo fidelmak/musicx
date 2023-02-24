@@ -14,9 +14,17 @@ class MusicX extends StatefulWidget {
 // String artist = artist;
 
 class _MusicXState extends State<MusicX> {
+  final player = AudioPlayer();
   void playSound(int soundNumber) {
-    final player = AudioPlayer();
     player.play(AssetSource('/muz/mux$soundNumber.mp3'));
+  }
+
+  void pauseSound() {
+    player.pause();
+  }
+
+  void stopSound() {
+    player.stop();
   }
 
   Card buildKey({
@@ -24,6 +32,7 @@ class _MusicXState extends State<MusicX> {
     required int soundNumber,
     required String song,
     required String artist,
+    required image,
   }) {
     return Card(
       color: color,
@@ -32,17 +41,43 @@ class _MusicXState extends State<MusicX> {
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           ListTile(
-            leading: Image.asset('img/muxCard.jpg'),
+            leading: image,
             title: Text(song, style: TextStyle(color: Colors.white)),
             subtitle: Text(artist, style: TextStyle(color: Colors.white)),
-            trailing: TextButton(
-              onPressed: () {
-                // Add your onPressed code here
-              },
-              child: Icon(
-                Icons.play_circle_filled,
-                color: Colors.white,
-              ),
+            trailing: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                TextButton(
+                  onPressed: () {
+                    // Add your onPressed code here
+                    playSound(soundNumber);
+                  },
+                  child: Icon(
+                    Icons.play_circle_filled,
+                    color: Colors.white,
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {
+                    // Add your onPressed code here
+                    pauseSound();
+                  },
+                  child: Icon(
+                    Icons.pause,
+                    color: Colors.white,
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {
+                    // Add your onPressed code here
+                    stopSound();
+                  },
+                  child: Icon(
+                    Icons.stop,
+                    color: Colors.white,
+                  ),
+                ),
+              ],
             ),
           ),
         ],
@@ -81,42 +116,50 @@ class _MusicXState extends State<MusicX> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  SizedBox(height: 10),
+                  SizedBox(height: 5),
                   Padding(
-                    padding: const EdgeInsets.all(20.0),
+                    padding: const EdgeInsets.all(10.0),
                     child: Card(
                       child: Container(
                         padding: EdgeInsets.all(15.0),
                         height: 200,
-                        child: Row(
-                          children: [
-                            Image.asset(
-                              'img/muxCard.jpg',
-                              fit: BoxFit.cover,
-                              height: 400,
-                            ),
-                            Flexible(
-                              child: ListTile(
-                                title: Text('Jane Doe'),
-                                subtitle: Text('jane.doe@example.com'),
-                              ),
-                            )
-                          ],
+                        child: Image.asset(
+                          'img/muxCard.jpg',
+                          fit: BoxFit.cover,
+                          width: 400,
+                          height: 400,
                         ),
                       ),
                     ),
                   ),
-                  buildKey(
-                    color: Colors.green,
-                    soundNumber: 1,
-                    song: "Song title: buga",
-                    artist: "Artist name : Kiss Daniel",
-                  ),
-                  buildKey(
-                      color: Colors.black,
-                      soundNumber: 2,
-                      song: "Song title: yoga",
-                      artist: " Artist name : Asake"),
+                  Expanded(
+                      child: ListView(children: <Widget>[
+                    buildKey(
+                      color: Colors.green,
+                      soundNumber: 1,
+                      song: "Song title: let th b light",
+                      artist: "Artist name :seyi ft zlatan",
+                      image: Image.asset('img/zlatan.jpeg'),
+                    ),
+                    buildKey(
+                        color: Colors.black,
+                        soundNumber: 2,
+                        song: "Song title:do you mind",
+                        artist: " Artist name : Chris Brown",
+                        image: Image.asset('img/do-you-mind.webp')),
+                    buildKey(
+                        color: Colors.black,
+                        soundNumber: 3,
+                        song: "Song title: Ojemba",
+                        artist: " Artist name : Phyno ft Olamide",
+                        image: Image.asset('img/ojemba-artwork.webp')),
+                    buildKey(
+                        color: Colors.black,
+                        soundNumber: 4,
+                        song: "Song title: yoga",
+                        artist: " Artist name : Asake",
+                        image: Image.asset('img/yoga-artwork.webp')),
+                  ])),
                 ],
               ),
             )));
