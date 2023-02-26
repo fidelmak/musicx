@@ -137,7 +137,7 @@ class _MusicXState extends State<MusicX> {
                     buildKey(
                       color: Colors.green,
                       soundNumber: 1,
-                      song: "Song title: let th b light",
+                      song: "Song title: let there be light",
                       artist: "Artist name :seyi ft zlatan",
                       image: Image.asset('assets/img/zlatan.jpeg'),
                     ),
